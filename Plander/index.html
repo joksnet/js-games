@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>Planet Lander</title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <script type="text/javascript" src="inc/plander.js"></script>
+  <style type="text/css">
+  /*<![CDATA[*/
+    *, body { padding: 0px; margin: 0px; }
+    div { border: 1px solid black; position: absolute; padding: 2px; }
+    div#plander { width: 440px; height: 380px; left: 10px; top: 10px; }
+    div#plander div { background-color: #000; color: #FFF; font: 9px "Courrier New"; text-align: center; padding: 0px; }
+    div#info { width: 80px; height: 380px; left: 460px; top: 10px; }
+    div#info input, div#info label { width: 100%; border: 1px solid black; margin-bottom: 2px; background-color: white; font: 11px "Courrier New"; }
+    div#info input { cursor: pointer; }
+    div#info label { display: block; width: 95%; padding: 1px; text-align: center; }
+    div#info input#start:hover { background-color: lightblue; }
+    div#info input#stop:hover { background-color: lightgreen; }
+    div#info label#level { width: 70%; }
+    div#info input#next { width: 20%; float: right; }
+    div#todo { width: 530px; height: 90px; top: 400px; left: 10px; overflow: true; padding-top: 5px; }
+    div#todo ol { margin-left: 20px; font: 10px "Courrier New"; padding-top: 2px; }
+  /*]]>*/
+  </style>
+</head>
+<body>
+  <div id="plander"></div>
+  <div id="info">
+    <input type="button" id="start" value="start" />
+    <input type="button" id="stop" value="pause" />
+
+    <label id="lifes">&nbsp;</label>
+    <label id="fuel">&nbsp;</label>
+    <label id="points">&nbsp;</label>
+
+    <input type="button" id="next" value=">" />
+    <label id="level">&nbsp;</label>
+
+    <label id="speedx">&nbsp;</label>
+    <label id="speedy">&nbsp;</label>
+
+    <label id="warn">&nbsp;</label>
+  </div>
+  <div id="todo">
+    <h6>TODO</h6>
+    <ol>
+      <li>Collision detection.-</li>
+      <li>Landing detection.-</li>
+      <li>Check if off screen and way low.-</li>
+      <li>Game lost by empty fuel.-</li>
+    </ol>
+  </div>
+</body>
+</html>
