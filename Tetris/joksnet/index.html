@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>4Bricks</title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <script type="text/javascript" src="inc/tetris.js"></script>
+  <style type="text/css">
+  /*<![CDATA[*/
+    *, body { padding: 0px; margin: 0px; }
+    #tetris, #screen, iframe { position: absolute; top: 10px; left: 10px; width: 176px; height: 336px; border: 1px solid black; background: white url('img/bg.gif') repeat; }
+    #tetris.pause { background-color: lightgrey; }
+    #screen, iframe { background-color: #EEE; background-image: none; }
+    #screen h2#title { text-align: center; margin-top: 45px; }
+    #screen h5#message { text-align: center; margin-top: 5px; font-weight: normal; }
+    #screen #score { width: 128px; height: 48px; margin: 0 auto; text-align: center; margin-top: 128px; }
+    #screen #score input { border: 1px solid black; padding: 2px; margin-bottom: 2px; }
+    #screen ul#configure { list-style: none; font-size: 80%; }
+    #screen ul#configure li { cursor: pointer; }
+    #screen ul#configure li input { position: relative; top: -2px; left: 6px; cursor: pointer; }
+    #screen ul#configure li label { position: relative; top: 0px; left: 8px; cursor: pointer; }
+    #screen ul#configure li:hover label { color: red; }
+    #next { position: absolute; top: 10px; left: 196px; width: 96px; height: 96px; border: 1px solid black; background-color: white; }
+    #controls { position: absolute; top: 122px; left: 196px; width: 96px; height: 224px; border: 1px solid black; background-color: white; }
+    #controls input, #controls label { float: left; margin: 2px 3px 0px 3px; width: 88px; border: 1px solid black; background-color: white; font-size: 14px; font-family: "Courrier New"; text-align: center; }
+    #controls input { width: 90px; cursor: pointer; }
+    #controls input#start:hover { background-color: lightblue; }
+    #controls input#stop:hover { background-color: lightgreen; }
+    #controls input#restart:hover { background-color: lightpink; }
+    #controls input#config:hover { background-color: lightsteelblue; }
+    #controls input#scores:hover { background-color: orange; }
+    #controls input#about:hover { background-color: lightcyan; }
+  /*]]>*/
+  </style>
+  <!--[if IE]>
+  <style type="text/css">
+  /*<![CDATA[*/
+    #screen { text-align: center; }
+    #screen #score { margin-left: auto; }
+    #screen ul#configure { font-size: 79%; text-align: left; }
+    #screen ul#configure li input { top: 2px; left: 2px; }
+    #screen ul#configure li label { left: 3px; }
+    #next { width: 98px; }
+    #controls { height: 240px; top: 106px; border-top: 0; }
+    #controls label { width: 90px; height: 21px; }
+  /*]]>*/
+  </style>
+  <![endif]-->
+</head>
+<body>
+  <div id="tetris"></div>
+  <div id="screen">
+    <h2 id="title">Welcome to 4Bricks</h2>
+    <h5 id="message">&nbsp;</h5>
+    <div id="score">
+      <h3>00000</h3>
+      <input type="text" name="name" id="name" value="" maxlength="100" size="16" />
+      <input type="button" name="submit" id="submit" value="Submit Score" />
+    </div>
+    <ul id="configure">
+      <li><input type="checkbox" id="gr" checked="checked" /> <label for="gr">Show Grid</label></li>
+      <li><input type="checkbox" id="rt" checked="checked" /> <label for="rt">Rotate Bricks Clockwise</label></li>
+      <li><input type="checkbox" id="cl" /> <label for="cl">Use Random Bricks Colors</label></li>
+      <li><input type="checkbox" id="st" /> <label for="st">Stack Bricks</label></li>
+      <li><input type="checkbox" id="gs" /> <label for="gs">Show Ghost Brick</label></li>
+    </ul>
+  </div>
+  <div id="next"></div>
+  <div id="controls">
+    <input type="button" name="start" id="start" value="Start" />
+    <input type="button" name="stop" id="stop" value="Pause" />
+    <input type="button" name="restart" id="restart" value="Restart" />
+    <label id="level">&nbsp;</label>
+    <label id="lives">&nbsp;</label>
+    <label id="points">&nbsp;</label>
+    <label id="lines">&nbsp;</label>
+    <input type="button" name="config" id="config" value="Config" />
+    <input type="button" name="scores" id="scores" value="Scores" />
+    <input type="button" name="about" id="about" value="About" />
+  </div>
+  <div id="music">
+    <object type="application/x-shockwave-flash" width="17" height="17" data="audio.swf?autoplay=true&repeat=true&song_url=snd/a.mp3&song_title=Tetris">
+      <param name="movie" value="audio.swf" />
+      <param name="autoplay" value="true" />
+      <param name="repeat" value="true" />
+      <param name="song_url" value="snd/a.mp3" />
+      <param name="song_title" value="Tetris" />
+    </object>
+  </div>
+</body>
+</html>

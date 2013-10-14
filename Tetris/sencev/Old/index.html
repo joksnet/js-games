@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>sencev Tetris</title>
+
+<script type="text/javascript" src="./javascript.js"></script>
+
+<style type="text/css">
+
+* { margin: 0; padding: 0; }
+body { font: 11px Tahoma, sans-serif; background: #FFF; }
+
+div#wrap { margin: 20px auto; width: 258px;  }
+
+div#wrap div#stats { margin-bottom: 20px; }
+
+div#wrap div#box {  height: 480px; background: #F8F8F8; border: 1px solid #AAA; position: relative; }
+div#wrap div#box img, div#next-Images img { display: block; position: absolute; border: 0; width: 16px; height: 16px; top: 0; left: 0; }
+
+#next-Images { position: relative; }
+
+</style>
+
+</head>
+<body>
+
+<div id="wrap">
+
+    <div id="stats">
+        <input type="button" value="Start" onclick="scvTetris.init.apply(scvTetris, [0]);" />
+        <input type="button" value="Stop" onclick="scvTetris.stop();" />
+
+    </div>
+
+    <div id="box">
+        <!-- -->
+    </div>
+</div>
+
+
+
+</body>
+</html>

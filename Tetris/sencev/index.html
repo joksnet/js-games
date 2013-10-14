@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Tetris</title>
+
+    <style type="text/css">
+        * { margin: 0; padding: 0; }
+        body { padding-top: 10px; background-color: #232323; color: #666; }
+        body div#wrap { margin: 0 auto; border-bottom: 4px solid #0a0a0a; border-right: #0a0a0a; height: 440px; width: 360px; background-color: #FFF; }
+        div#wrap div#tetris { float: left; position: relative; height: 440px; width: 220px; border-right: 1px solid #DDD; background: #FFF url(./grid.gif) repeat; }
+        
+        div.block { position: absolute; height: 20px; width: 20px; background-image: url(./blocks-bg.png); background-repeat: no-repeat; }
+        
+        div.brick-I     { background-position:      0 0; }
+        div.brick-J     { background-position:  -20px 0; }
+        div.brick-L     { background-position:  -40px 0; }
+        div.brick-O     { background-position:  -60px 0; }
+        div.brick-S     { background-position:  -80px 0; }
+        div.brick-T     { background-position: -100px 0; }
+        div.brick-Z     { background-position: -120px 0; }
+        
+        div.brick-I[id] { background-position:      0 -20px; }
+        div.brick-J[id] { background-position:  -20px -20px; }
+        div.brick-L[id] { background-position:  -40px -20px; }
+        div.brick-O[id] { background-position:  -60px -20px; }
+        div.brick-S[id] { background-position:  -80px -20px; }
+        div.brick-T[id] { background-position: -100px -20px; }
+        div.brick-Z[id] { background-position: -120px -20px; }
+        
+        
+        div#wrap div#panel { margin-left: 222px; height: 440px; padding-left: 2px; background-color: #F8F8F8; }
+        
+        div#panel div#panel-content { padding-top: 20px; }
+        
+        div#panel div#next-brick { position: relative; margin: 0 auto 10px auto; width: 100px; height: 80px; border: 1px solid #DDD; background: #FFF url(./grid.gif) repeat; }
+        
+        div#panel ul li { list-style: none; }
+        
+        div#panel ul li a { display: block; text-decoration: none; color: #0063DC; }
+        
+        div#panel ul li a:hover { text-decoration: underline; }
+        
+        div#tetris div.mapBlock { color: #111; position: absolute; height: 20px; width: 20px; opacity: 0.60;  }
+        div#tetris div.mapBusy  { background-color: #FF0066; }
+        div#tetris div.mapFree  { background-color: #3FB1F8; }
+        
+        div#tetris div.mapBlock:hover {}
+        
+        div#tetris div.mapBlock span { display: none; position: absolute; font-size: 11px; white-space: nowrap; z-index: 1; }
+        div#tetris div.mapBlock:hover span { display: block;  }
+    </style>
+
+    <script type="text/javascript" src="./Tetris.js"></script>
+  
+    
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="tetris">
+        </div>
+        <div id="panel">
+            <div id="panel-content">
+                <div id="next-brick"></div>
+                <ul>
+                    <li><a href="#" id="start">start</a></li>
+                    <li><a href="#" id="stop">stop</a></li>
+                    <li><a href="#" id="map-show">show map</a></li>
+                    <li><a href="#" id="map-hide">hide map</a></li>
+                    <li>Points <span id="points">0</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
