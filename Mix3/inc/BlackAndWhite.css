@@ -1,0 +1,5 @@
+
+.BlackAndWhite {  }
+.BlackAndWhite div { position: absolute; }
+.BlackAndWhite div.Controls { left: 0; top: 0; width: 140px; }
+.BlackAndWhite div.Game { left: 150px; top: 0; }
