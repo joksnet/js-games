@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>jPuzzle15</title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <script type="text/javascript" src="inc/jPuzzle15.js"></script>
+  <script type="text/javascript" src="inc/jPuzzle15Ajax.js"></script>
+  <script type="text/javascript">
+  /*<![CDATA[*/
+  if ( window.addEventListener )
+    window.addEventListener('DOMContentLoaded', function() { jPuzzle15('puzzle', 'time', 'moves', 'mosaic', 'scores', 'levels', ['solve', 'shuffle', 'clear', 'getScores', 'size5x5', 'size4x4', 'size3x3', 'play', 'pause']); }, true);
+  /*]]>*/
+  </script>
+  <style type="text/css">
+  /*<![CDATA[*/
+    * { padding: 0; margin: 0; }
+
+    div.size5x5 { width: 362px; height: 360px; }
+    div.size4x4 { width: 292px; height: 290px; }
+    div.size3x3 { width: 220px; height: 218px; }
+
+    div#puzzle { border: 1px solid blue; position: absolute; top: 10px; left: 120px; }
+    div#puzzle a { position: absolute; width: 64px; height: 64px; border: 1px solid blue; cursor: pointer; opacity: 0.5; }
+    div#puzzle a.ok { border-color: green; opacity: 0.99; }
+    div#puzzle a:hover { border-color: red; opacity: 0.99; }
+
+    ul#controls { width: 90px; border: 1px solid blue; position: absolute; left: 10px; top: 10px; padding: 5px 5px 0 5px; }
+    ul#controls li { list-style: none; margin-bottom: 5px; }
+    ul#controls li.title { font-weight: 700; font-family: 'Courrier New', sans-serif; font-size: 85%; }
+    ul#controls li a { display: block; border: 1px solid blue; text-align: center; cursor: pointer; }
+    ul#controls li a:hover { border-color: red; }
+    ul#controls li span { text-align: center; font-size: 90%; display: block; }
+
+    div#scores { position: absolute; width: 450px; left: 492px; top: 110px; border: 1px solid blue; padding: 5px; margin-bottom: 10px; }
+    div#scores table { border: 1px solid blue; padding: 5px; }
+    div#scores table.left { float: left; width: 49%; }
+    div#scores table.right { float: right; width: 49%; }
+    div#scores table thead tr { background-color: #E5ECF9; }
+    div#scores table tbody tr td { text-align: center; }
+
+    div#mosaic { position: absolute; top: 10px; left: 492px; height: 90px; width: 460px; border: 1px solid blue; }
+    div#mosaic form pre { position: absolute; top: 5px; right: 4px; width: 140px; }
+    div#mosaic form label {}
+    div#mosaic form label span { width: 100px; margin: 5px 10px 0 10px; }
+    div#mosaic form label input { margin-top: 5px; border: 1px solid blue; padding: 2px; background-color: white; }
+
+    ul#levels { position: absolute; top: 378px; left: 10px; width: 395px; border: 1px solid blue; padding: 5px; }
+    ul#levels li { float: left; list-style: none; width: 64px; margin-right: 10px; }
+    ul#levels li a { cursor: pointer; }
+    ul#levels li span { display: block; text-align: center; }
+  /*]]>*/
+  </style>
+</head>
+
+<body>
+  <div id="puzzle"></div>
+  <div id="mosaic"></div>
+  <div id="scores"></div>
+  <ul id="levels"></ul>
+  <ul id="controls">
+    <li class="title">Board</li>
+    <li><a id="size5x5">size 5x5</a></li>
+    <li><a id="size4x4">size 4x4</a></li>
+    <li><a id="size3x3">size 3x3</a></li>
+
+    <li class="title">Play</li>
+    <li><a id="play">play</a></li>
+    <li><a id="pause">pause</a></li>
+    <li><span id="time">00:00</span></li>
+    <li><span id="moves">0</span></li>
+
+    <li class="title">Admin</li>
+    <li><a id="getScores">scores</a></li>
+    <li><a id="solve">solve</a></li>
+    <li><a id="shuffle">shuffle</a></li>
+    <li><a id="clear">clear</a></li>
+  </ul>
+</body>
+</html>
