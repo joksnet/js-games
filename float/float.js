@@ -1,6 +1,7 @@
 
-var Flo = function(element) {
+var Flo = function(element, form_doc) {
     this.element = element;
+    this.form_doc = form_doc || document;
     this.points = 0;
     this.level = 1;
     this.run = false;
@@ -21,9 +22,48 @@ Flo.prototype.init = function() {
                          "Press <tt>H</tt> to start floating the ball.<br>" +
                          "Press <tt>J</tt>/<tt>K</tt> to change level of difficulty.";
 
+    var send = document.createElement("button");
+        send.innerHTML = "Send High Score";
+        send.addEventListener("click", function(flo) {
+            return function(event) {
+                if (flo.endtime === undefined) {
+                    return;
+                }
+
+                var name = prompt("What is your name?", "Type you name here");
+
+                var input_name = flo.form_doc.createElement("input");
+                    input_name.name = "name";
+                    input_name.value = name;
+                    input_name.type = "hidden";
+
+                var input_points = flo.form_doc.createElement("input");
+                    input_points.name = "points";
+                    input_points.value = flo.points;
+                    input_points.type = "hidden";
+
+                var input_time = flo.form_doc.createElement("input");
+                    input_time.name = "time";
+                    input_time.value = flo.endtime.getTime() - flo.starttime.getTime();
+                    input_time.type = "hidden";
+
+                var form = flo.form_doc.createElement("form");
+                    form.action = "score.php?rand=" + Math.random();
+                    form.method = "POST";
+                    form.appendChild(input_name);
+                    form.appendChild(input_points);
+                    form.appendChild(input_time);
+
+                flo.form_doc.body.appendChild(form);
+                form.submit();
+                flo.form_doc.body.removeChild(form);
+            };
+        }(this));
+
     this.panel = document.createElement("div");
     this.panel.className = "panel";
     this.panel.appendChild(desc);
+    this.panel.appendChild(send);
 
     this.cols = [];
 
@@ -81,6 +121,8 @@ Flo.prototype.init = function() {
 };
 
 Flo.prototype.reset = function() {
+    this.starttime = new Date();
+    this.endtime = undefined;
     this.points = 0;
     this.ballspeed = 4;
     this.flapcount = 0;
@@ -113,6 +155,7 @@ Flo.prototype.start = function() {
 
 Flo.prototype.end = function() {
     this.run = false;
+    this.endtime = new Date();
     this.panel.style.display = "block";
 };
 

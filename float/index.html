@@ -4,12 +4,18 @@
   <title>Float</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" media"screen" href="float.css">
+  <style type="text/css">
+   .float { float: left; }
+   iframe { float: left; margin-left: 20px; height: 480px; }
+  </style>
  </head>
  <body>
   <div id="float_01" class="float"></div>
+  <iframe id="float_01_score" src="score.php"></iframe>
   <script type="text/javascript" src="float.js"></script>
   <script type="text/javascript">
-   new Flo(document.getElementById("float_01"));
+   new Flo(document.getElementById("float_01"),
+           document.getElementById('float_01_score').contentDocument);
   </script>
  </body>
 </html>

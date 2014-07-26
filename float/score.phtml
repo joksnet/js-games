@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Float High Score</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+   table { width: 100%; }
+   .text-right { text-align: right; }
+  </style>
+ </head>
+ <body>
+  <table>
+   <tbody>
+<?php foreach ($points as $point): ?>
+    <tr>
+     <th><?php echo $point['name']; ?></th>
+     <td><?php echo $point['points']; ?></td>
+     <td class="text-right"><?php echo $point['time'] / 1000; ?> secs</td>
+    </tr>
+<?php endforeach; ?>
+   </tbody>
+  </table>
+ </body>
+</html>
