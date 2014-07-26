@@ -1,0 +1,43 @@
+.float {
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    width: 640px;
+    height: 480px;
+    overflow: hidden;
+}
+
+.float .ball {
+    background-color: red;
+    border-radius: 32px;
+    position: absolute;
+    top: 234px;
+    width: 32px;
+    height: 32px;
+}
+
+.float .panel {
+    background-color: rgba(8, 51, 245, .8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.float strong {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.float .column {
+    background-color: darkgreen;
+    position: absolute;
+    width: 64px;
+    height: 100%;
+}
+
+.float .column .hole {
+    background-color: white;
+    position: relative;
+    width: 100%;
+}
