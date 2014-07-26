@@ -154,7 +154,7 @@ Flo.prototype.loop = function() {
 
         var incol = ballleft + 32 >= colleft && ballleft <= colleft + 64;
 
-        if (incol && (balltop <= colhole || balltop >= colhole + colalto)) {
+        if (incol && (balltop <= colhole || balltop + 32 >= colhole + colalto)) {
             this.end();
             return;
         }
