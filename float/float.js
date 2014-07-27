@@ -171,7 +171,8 @@ Flo.prototype.loop = function() {
     this.ball.style.top = balltop.toString() + "px";
 
     for (var i = 0; i < 5; i++) {
-        var nextleft = parseInt(this.cols[i]["elem"].style.left) - 4;
+        var colspeed = 3 + this.level;
+        var nextleft = parseInt(this.cols[i]["elem"].style.left) - colspeed;
 
         if (nextleft + 64 <= 0) {
             nextleft += parseInt(this.cols[i === 0 ? 4 : i - 1]["elem"].style.left) + 310;
