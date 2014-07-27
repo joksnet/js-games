@@ -14,8 +14,9 @@
   <iframe id="float_01_score" src="score.php"></iframe>
   <script type="text/javascript" src="float.js"></script>
   <script type="text/javascript">
-   new Flo(document.getElementById("float_01"),
-           document.getElementById('float_01_score').contentDocument);
+   new Flo(document.getElementById("float_01"), function() {
+    return document.getElementById('float_01_score').contentDocument;
+   });
   </script>
  </body>
 </html>

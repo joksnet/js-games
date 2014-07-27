@@ -22,48 +22,9 @@ Flo.prototype.init = function() {
                          "Press <tt>H</tt> to start floating the ball.<br>" +
                          "Press <tt>J</tt>/<tt>K</tt> to change level of difficulty.";
 
-    var send = document.createElement("button");
-        send.innerHTML = "Send High Score";
-        send.addEventListener("click", function(flo) {
-            return function(event) {
-                if (flo.endtime === undefined) {
-                    return;
-                }
-
-                var name = prompt("What is your name?", "Type you name here");
-
-                var input_name = flo.form_doc.createElement("input");
-                    input_name.name = "name";
-                    input_name.value = name;
-                    input_name.type = "hidden";
-
-                var input_points = flo.form_doc.createElement("input");
-                    input_points.name = "points";
-                    input_points.value = flo.points;
-                    input_points.type = "hidden";
-
-                var input_time = flo.form_doc.createElement("input");
-                    input_time.name = "time";
-                    input_time.value = flo.endtime.getTime() - flo.starttime.getTime();
-                    input_time.type = "hidden";
-
-                var form = flo.form_doc.createElement("form");
-                    form.action = "score.php?rand=" + Math.random();
-                    form.method = "POST";
-                    form.appendChild(input_name);
-                    form.appendChild(input_points);
-                    form.appendChild(input_time);
-
-                flo.form_doc.body.appendChild(form);
-                form.submit();
-                flo.form_doc.body.removeChild(form);
-            };
-        }(this));
-
     this.panel = document.createElement("div");
     this.panel.className = "panel";
     this.panel.appendChild(desc);
-    this.panel.appendChild(send);
 
     this.cols = [];
 
@@ -133,6 +94,8 @@ Flo.prototype.reset = function() {
     for (var i = 0; i < 5; i++) {
         this.reset_col(i);
     }
+
+    this.pointslabel.innerHTML = this.level + " // " + this.points;
 };
 
 Flo.prototype.reset_col = function(i) {
@@ -157,6 +120,8 @@ Flo.prototype.end = function() {
     this.run = false;
     this.endtime = new Date();
     this.panel.style.display = "block";
+
+    this.send_score();
 };
 
 Flo.prototype.flap = function() {
@@ -221,4 +186,43 @@ Flo.prototype.loop = function() {
 
         this.cols[i]["elem"].style.left = nextleft.toString() + "px";
     }
+};
+
+Flo.prototype.send_score = function() {
+    if (this.run || this.endtime === undefined) {
+        return;
+    }
+
+    var fdoc = this.form_doc.call();
+    var name = prompt("What is your name?", "Type you name here");
+
+    if (name.length === 0) {
+        return;
+    }
+
+    var input_name = fdoc.createElement("input");
+        input_name.name = "name";
+        input_name.value = name;
+        input_name.type = "hidden";
+
+    var input_points = fdoc.createElement("input");
+        input_points.name = "points";
+        input_points.value = this.points;
+        input_points.type = "hidden";
+
+    var input_time = fdoc.createElement("input");
+        input_time.name = "time";
+        input_time.value = this.endtime.getTime() - this.starttime.getTime();
+        input_time.type = "hidden";
+
+    var form = fdoc.createElement("form");
+        form.action = "score.php";
+        form.method = "POST";
+        form.appendChild(input_name);
+        form.appendChild(input_points);
+        form.appendChild(input_time);
+
+    fdoc.body.appendChild(form);
+    form.submit();
+    fdoc.body.removeChild(form);
 };
