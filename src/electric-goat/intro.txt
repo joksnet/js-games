@@ -1,0 +1,8 @@
+Tomás conciencia, estás tirado en el piso. El polvo denso penetra tus pulmones
+y comenzás a tocer. Al levantarte sentis el silecio de la habitación en donde
+solo se ve un hogar a leña.
+
+Buscas en tus bolsillos y encontrás fosforos.
+
+<item "Fosforos" 20>
+<action "Salir" 5 "load" "casa/afuera">

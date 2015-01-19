@@ -1,0 +1,5 @@
+Saliste de la casa. El sol esta en lo alto.
+
+<chance 75 "item" "Knife" 1>
+<action "Recolectar Madera" 2 "iteminc" "Madera">
+<action "Entrar" 5 "load" "casa/sala">
