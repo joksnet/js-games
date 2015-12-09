@@ -1,0 +1,70 @@
+/*!
+ * Electric Goat
+ */
+
+section article {
+	width: 60%;
+	float: left;
+}
+
+section article h1 {
+	margin: 0 0 1em 0;
+}
+
+section aside {
+	width: 40%;
+	float: left;
+	font-size: 9pt;
+	font-family: monospace;
+}
+
+aside big {
+	display: block;
+	text-align: right;
+	margin: 0 1em 1em 0;
+}
+
+aside fieldset {
+	margin-bottom: 1em;
+}
+
+dl {
+	margin: 0;
+}
+
+dt, dd {
+	width: 50%;
+	float: left;
+	margin: 0;
+}
+
+dt:nth-child(4n+3), dd:nth-child(4n+4) {
+	background-color: #F9F9F9;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+li button, li progress {
+	width: 100%;
+}
+
+button {
+	font-size: 9pt;
+	font-family: monospace;
+}
+
+footer {
+	position: absolute;
+	bottom: 5px;
+}
+
+footer address {
+	font-size: 80%;
+}

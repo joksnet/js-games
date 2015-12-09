@@ -1,0 +1,4 @@
+Hay un hogar a leña.
+
+<actioncond "Fosforos=1,Madera=5" "Prender fuego" 3 "iteminc" "Fuego" 10>
+<action "Salir" 0 "load" "casa/afuera">
